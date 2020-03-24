@@ -29,15 +29,15 @@ class Game
         if($yourChoice == 'ROCK'){
             $playerOne = 1;
             $playerTwo = rand(1,3);
-            $this->result($playerOne,$playerTwo);
+            $this->checkForWinner($playerOne,$playerTwo);
         }elseif($yourChoice == 'PAPER'){
             $playerOne = 2;
             $playerTwo = rand(1,3);
-            $this->result($playerOne,$playerTwo);
+            $this->checkForWinner($playerOne,$playerTwo);
         }elseif($yourChoice == 'SCISSOR'){
             $playerOne = 3;
             $playerTwo = rand(1,3);
-            $this->result($playerOne,$playerTwo);
+            $this->checkForWinner($playerOne,$playerTwo);
         }else{
             throw new Exception("You need to make right choice!");
         }
@@ -85,7 +85,7 @@ class Game
             $resultLabel = 'Win';
         }
 
-        echo "Player One has: ".$this->getHandName($playerOne)." vs Player Two has: ". $this->getHandName($playerTwo)." Result : ".$resultLabel." \n";
+        echo "Player One(Me) has: ".$this->getHandName($playerOne)." vs Player Two has: ". $this->getHandName($playerTwo)." Result : ".$resultLabel." \n";
     }
 
 
